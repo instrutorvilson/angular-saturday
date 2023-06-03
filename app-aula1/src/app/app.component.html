@@ -1,0 +1,25 @@
+<div class="container">
+   <h2 class="text-center">Lista de contatos</h2>
+   <table class="table table-striped">
+      <thead>
+         <tr class="bg-success">
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Ações</th>
+         </tr>
+      </thead>
+         <Tbody>
+            <tr *ngFor="let ct of lista">
+               <td>{{ct.nome}}</td>
+               <td>{{ct.email}}</td>
+               <td><button (click)="excluir(ct)">excluir</button></td>
+            </tr>
+         </Tbody>     
+   </table>
+   <form #f="ngForm" (ngSubmit)="salvar(f.value)">
+      <input type="text" placeholder="Informe nome" ngModel name="nome" />
+      <input type="text" placeholder="Informe email" ngModel name="email" />
+      
+      <button>Salvar</button>
+   </form>
+</div>
